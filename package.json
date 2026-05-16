@@ -24,7 +24,7 @@
     "publish:mac": "npm version patch --no-git-tag-version && npm run build:mac && npm run upload:mac",
     "build:linux": "electron-vite build && electron-builder --linux",
     "reset:install": "bash scripts/reset-install.sh",
-    "upload:github": "npm run build:dmg && gh release create v$(node -p \"require('./package.json').version\") dist/avatica-$(node -p \"require('./package.json').version\")-universal.dmg --title \"Avatica $(node -p \"require('./package.json').version\")\" --generate-notes"
+    "upload:github": "gh release create v$(node -p \"require('./package.json').version\") dist/avatica-$(node -p \"require('./package.json').version\").dmg --title \"Avatica $(node -p \"require('./package.json').version\")\" --generate-notes"
   },
   "dependencies": {
     "@codemirror/autocomplete": "^6.20.1",
