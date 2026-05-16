@@ -8,6 +8,19 @@
   A free, native creative studio for AI-generated media — image, video, music, and speech — that runs entirely on your machine. Bring your own provider keys; your projects live as plain folders on your disk.
 </p>
 
+<p align="center">
+  <img src="resources/screenshots/apps.png" alt="Apps grid">
+</p>
+<p align="center">
+  <img src="resources/screenshots/character.png" alt="Character Creator">
+</p>
+<p align="center">
+  <img src="resources/screenshots/video.png" alt="Video Generation">
+</p>
+<p align="center">
+  <img src="resources/screenshots/composer.png" alt="Compose timeline">
+</p>
+
 ## What it is
 
 Avatica talks to AI providers directly using keys you supply — generation costs go straight to your provider account and nothing else does.
@@ -121,3 +134,7 @@ Open Settings from the navbar (gear icon):
 
 - **General** — API keys, projects root folder, light/dark theme.
 - **Usage** — running cost totals and per-app/per-provider breakdown, estimated from each provider's published pricing.
+
+## License
+
+[GPL v3](LICENSE). You're free to use, modify, and distribute Avatica — including for creating commercial content. If you distribute a modified version, the source must be made available under the same license.
