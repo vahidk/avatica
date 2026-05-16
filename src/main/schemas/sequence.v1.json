@@ -1,0 +1,51 @@
+{
+  "id": "sequence.v1",
+  "name": "Sequence",
+  "extension": ".seq",
+  "icon": "fa-solid fa-film",
+  "thumbnail": null,
+  "jsonSchema": {
+    "type": "object",
+    "properties": {
+      "settings": {
+        "type": "object",
+        "properties": {
+          "width": { "type": "number" },
+          "height": { "type": "number" },
+          "fps": { "type": "number" }
+        },
+        "required": ["width", "height", "fps"]
+      },
+      "tracks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "string" },
+            "type": { "type": "string", "enum": ["video", "audio"] },
+            "name": { "type": "string" },
+            "muted": { "type": "boolean" },
+            "volume": { "type": "number" },
+            "clips": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": { "type": "string" },
+                  "fileId": { "type": "string" },
+                  "start": { "type": "number" },
+                  "duration": { "type": "number" },
+                  "trimIn": { "type": "number" },
+                  "trimOut": { "type": "number" }
+                },
+                "required": ["id", "fileId", "start", "duration"]
+              }
+            }
+          },
+          "required": ["id", "type", "name", "clips"]
+        }
+      }
+    },
+    "required": ["settings", "tracks"]
+  }
+}

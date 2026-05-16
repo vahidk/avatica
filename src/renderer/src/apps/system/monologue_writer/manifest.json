@@ -1,0 +1,69 @@
+{
+  "id": "monologue_writer",
+  "name": "Monologue Writer",
+  "menu": [
+    "Script"
+  ],
+  "order": 101,
+  "icon": "microphone",
+  "type": "system",
+  "function": {
+    "description": "Generate a monologue script — standup, storytelling, TED talk, dramatic, pitch, vlog, spoken word, and more",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "What the monologue is about — topic, premise, angle. Include the performer's persona inline if you have one in mind (e.g. \"a jaded tech CEO ranting about standing desks\")."
+        },
+        "form": {
+          "type": "string",
+          "description": "Monologue form — shapes structure and rhythm",
+          "enum": [
+            "standup",
+            "storytelling",
+            "ted-talk",
+            "dramatic",
+            "observational",
+            "pitch",
+            "vlog",
+            "spoken-word"
+          ]
+        },
+        "tone": {
+          "type": "string",
+          "description": "Emotional register of the delivery",
+          "enum": [
+            "funny",
+            "inspiring",
+            "reflective",
+            "angry",
+            "absurd",
+            "sincere",
+            "melancholic",
+            "dry",
+            "warm"
+          ]
+        },
+"duration": {
+          "type": "string",
+          "description": "Target spoken duration",
+          "enum": [
+            "30s",
+            "1min",
+            "3min",
+            "5min",
+            "10min"
+          ]
+        },
+        "model": {
+          "type": "string",
+          "description": "Text model to use"
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<app-view>
+  <app-mode name="mode" value="generate" label="$mode">
+    <app-mode-option value="generate" label="$generate" icon="wand-magic-sparkles">
+      <app-row>
+        <app-file name="referenceImages" label="$referenceImages" multiple max="3" accept="image/*"></app-file>
+      </app-row>
+      <app-row>
+        <app-select name="model" label="$model" options="$providers.video.generate"></app-select>
+        <app-select name="aspectRatio" value="16:9" label="$aspectRatio" options="$providers.video.generate[model].aspectRatio"></app-select>
+        <app-select name="resolution" value="1080p" label="$resolution" options="$providers.video.generate[model].resolution"></app-select>
+        <app-select name="durationSeconds" value="4" label="$duration" options="$providers.video.generate[model].durationSeconds"></app-select>
+      </app-row>
+    </app-mode-option>
+    <app-mode-option value="image_to_video" label="$imageToVideo" icon="image">
+      <app-row>
+        <app-file name="startImage" label="$startingImage" accept="image/*" required></app-file>
+        <app-file name="referenceImages" label="$referenceImages" multiple max="3" accept="image/*"></app-file>
+      </app-row>
+      <app-row>
+        <app-select name="model" label="$model" options="$providers.video.image_to_video"></app-select>
+        <app-select name="aspectRatio" value="16:9" label="$aspectRatio" options="$providers.video.image_to_video[model].aspectRatio"></app-select>
+        <app-select name="resolution" value="1080p" label="$resolution" options="$providers.video.image_to_video[model].resolution"></app-select>
+        <app-select name="durationSeconds" value="4" label="$duration" options="$providers.video.image_to_video[model].durationSeconds"></app-select>
+      </app-row>
+    </app-mode-option>
+    <app-mode-option value="interpolate" label="$interpolate" icon="right-left">
+      <app-row>
+        <app-file name="startImage" label="$startImage" accept="image/*"></app-file>
+        <app-file name="endImage" label="$endImage" accept="image/*"></app-file>
+      </app-row>
+      <app-row>
+        <app-select name="model" label="$model" options="$providers.video.interpolate"></app-select>
+        <app-select name="aspectRatio" value="16:9" label="$aspectRatio" options="$providers.video.interpolate[model].aspectRatio"></app-select>
+        <app-select name="resolution" value="720p" label="$resolution" options="$providers.video.interpolate[model].resolution"></app-select>
+        <app-select name="durationSeconds" value="8" label="$duration" options="$providers.video.interpolate[model].durationSeconds"></app-select>
+      </app-row>
+    </app-mode-option>
+    <app-mode-option value="extend" label="$extend" icon="arrows-left-right-to-line">
+      <app-row>
+        <app-file name="sourceVideo" label="$sourceVideo" accept="video/*" required></app-file>
+      </app-row>
+      <app-row>
+        <app-select name="model" label="$model" options="$providers.video.extend"></app-select>
+        <app-select name="durationSeconds" value="8" label="$duration" options="$providers.video.extend[model].durationSeconds"></app-select>
+      </app-row>
+    </app-mode-option>
+  </app-mode>
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="Describe the video — scene, action, camera movement, mood..."></app-input>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

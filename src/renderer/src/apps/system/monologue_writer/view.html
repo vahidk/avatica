@@ -1,0 +1,42 @@
+<app-view>
+  <app-row>
+    <app-select name="form" value="" label="$form">
+      <option value="">Auto</option>
+      <option value="standup">Standup</option>
+      <option value="storytelling">Storytelling</option>
+      <option value="ted-talk">TED Talk</option>
+      <option value="dramatic">Dramatic</option>
+      <option value="observational">Observational</option>
+      <option value="pitch">Pitch</option>
+      <option value="vlog">Vlog</option>
+      <option value="spoken-word">Spoken Word</option>
+    </app-select>
+    <app-select name="tone" value="" label="$tone">
+      <option value="">Auto</option>
+      <option value="funny">Funny</option>
+      <option value="inspiring">Inspiring</option>
+      <option value="reflective">Reflective</option>
+      <option value="angry">Angry</option>
+      <option value="absurd">Absurd</option>
+      <option value="sincere">Sincere</option>
+      <option value="melancholic">Melancholic</option>
+      <option value="dry">Dry</option>
+      <option value="warm">Warm</option>
+    </app-select>
+    <app-select name="duration" value="" label="$duration">
+      <option value="">Auto</option>
+      <option value="30s">30s</option>
+      <option value="1min">1 min</option>
+      <option value="3min">3 min</option>
+      <option value="5min">5 min</option>
+      <option value="10min">10 min</option>
+    </app-select>
+  </app-row>
+  <app-row>
+    <app-select name="model" label="$model" options="$providers.text.generate"></app-select>
+  </app-row>
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="Describe the monologue — topic, angle, and the performer if you have one in mind..." required></app-input>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

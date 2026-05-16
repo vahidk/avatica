@@ -1,0 +1,11 @@
+<app-view>
+  <app-row>
+    <app-select name="model" label="$model" options="$providers.speech.generate"></app-select>
+    <app-select name="voice" label="$voice" options="$providers.speech.generate[model].voice"></app-select>
+    <app-select name="language" value="" label="$language" options="$providers.speech.generate[model].language"></app-select>
+  </app-row>
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="Type the text you want spoken aloud..."></app-input>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

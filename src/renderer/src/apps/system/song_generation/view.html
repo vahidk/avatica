@@ -1,0 +1,63 @@
+<app-view>
+  <app-row>
+    <app-select name="duration" value="" label="$duration">
+      <option value="">Auto</option>
+      <option value="60">1m</option>
+      <option value="120">2m</option>
+      <option value="180">3m</option>
+      <option value="240">4m</option>
+      <option value="300">5m</option>
+    </app-select>
+    <app-select name="genre" value="" label="$genre">
+      <option value="">Auto</option>
+      <option value="Pop">Pop</option>
+      <option value="Rock">Rock</option>
+      <option value="Jazz">Jazz</option>
+      <option value="Classical">Classical</option>
+      <option value="Electronic">Electronic</option>
+      <option value="Hip-Hop">Hip-Hop</option>
+      <option value="R&B">R&B</option>
+      <option value="Country">Country</option>
+      <option value="Folk">Folk</option>
+      <option value="Ambient">Ambient</option>
+      <option value="Lo-fi">Lo-fi</option>
+      <option value="Cinematic">Cinematic</option>
+    </app-select>
+  </app-row>
+  <app-row>
+    <app-select name="instruments" value="" label="$instruments">
+      <option value="">Auto</option>
+      <option value="Piano">Piano</option>
+      <option value="Guitar">Guitar</option>
+      <option value="Strings">Strings</option>
+      <option value="Synth">Synth</option>
+      <option value="Drums">Drums</option>
+      <option value="Orchestra">Orchestra</option>
+    </app-select>
+    <app-select name="mood" value="" label="$mood">
+      <option value="">Auto</option>
+      <option value="Happy">Happy</option>
+      <option value="Sad">Sad</option>
+      <option value="Energetic">Energetic</option>
+      <option value="Calm">Calm</option>
+      <option value="Dark">Dark</option>
+      <option value="Uplifting">Uplifting</option>
+      <option value="Romantic">Romantic</option>
+      <option value="Epic">Epic</option>
+    </app-select>
+    <app-select name="tempo" value="" label="$tempo">
+      <option value="">Auto</option>
+      <option value="Slow">Slow</option>
+      <option value="Medium">Medium</option>
+      <option value="Fast">Fast</option>
+    </app-select>
+  </app-row>
+  <app-row>
+    <app-select name="model" label="$model" options="$providers.audio.generate"></app-select>
+    <app-select name="format" value="mp3" label="$format" options="$providers.audio.generate[model].format"></app-select>
+  </app-row>
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="Describe the song — theme, vibe, lyrics or topic..." required></app-input>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

@@ -1,0 +1,49 @@
+<app-view>
+  <app-row>
+    <app-select name="style" value="" label="$artStyle">
+      <option value="">Auto</option>
+      <option value="cinematic">Cinematic</option>
+      <option value="anime">Anime</option>
+      <option value="comic-book">Comic Book</option>
+      <option value="watercolor">Watercolor</option>
+      <option value="oil-painting">Oil Painting</option>
+      <option value="noir">Noir</option>
+      <option value="3d-render">3D Render</option>
+      <option value="pixel-art">Pixel Art</option>
+    </app-select>
+  </app-row>
+  <app-row>
+    <app-select name="voicePitch" value="" label="$voicePitch">
+      <option value="">Auto</option>
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </app-select>
+    <app-select name="voiceTone" value="" label="$voiceTone">
+      <option value="">Auto</option>
+      <option value="warm">Warm</option>
+      <option value="smooth">Smooth</option>
+      <option value="raspy">Raspy</option>
+      <option value="breathy">Breathy</option>
+      <option value="sharp">Sharp</option>
+      <option value="gravelly">Gravelly</option>
+    </app-select>
+    <app-select name="voicePace" value="" label="$voicePace">
+      <option value="">Auto</option>
+      <option value="slow">Slow</option>
+      <option value="moderate">Moderate</option>
+      <option value="fast">Fast</option>
+    </app-select>
+  </app-row>
+  <app-row>
+    <app-file name="referenceImage" label="$referenceImage" accept="image/*"></app-file>
+  </app-row>
+  <app-row>
+    <app-select name="model" label="$model" options="$providers.image.generate"></app-select>
+    <app-select name="imageSize" value="1K" label="$imageSize" options="$providers.image.generate[model].imageSize"></app-select>
+  </app-row>
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="Describe the character — age, look, personality, backstory..." required></app-input>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

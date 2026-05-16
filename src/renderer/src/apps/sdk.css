@@ -1,0 +1,293 @@
+/* ============================================
+   App UI — Design Tokens + Element Styles
+   ============================================ */
+
+:root {
+  --hw-bg-recess:   #111;
+  --hw-bg-track:    #141414;
+  --hw-bg-pit:      #090909;
+
+  --hw-border:      #252525;
+  --hw-border-deep: #222;
+
+  --hw-accent:          #3b82f6;
+  --hw-accent-glow:     rgba(59,130,246,0.4);
+  --hw-accent-glow-s:   rgba(59,130,246,0.5);
+  --hw-accent-border:   rgba(59,130,246,0.3);
+  --hw-accent-dim:      rgba(59,130,246,0.12);
+
+  --hw-text-primary:   #e8e8e8;
+  --hw-text-secondary: #999;
+  --hw-text-muted:     #777;
+  --hw-text-dim:       #606060;
+  --hw-text-engrave:   0 1px 0 rgba(0,0,0,0.8), 0 -1px 0 rgba(255,255,255,0.04);
+
+  --hw-grad-face:    linear-gradient(145deg, #333 0%, #161616 60%, #111 100%);
+  --hw-grad-face-sm: linear-gradient(145deg, #2e2e2e 0%, #161616 60%, #111 100%);
+  --hw-grad-face-hi: linear-gradient(145deg, #444 0%, #222 50%, #1a1a1a 100%);
+  --hw-grad-channel: linear-gradient(180deg, #0e0e0e, #141414);
+
+  --hw-shadow-inset: inset 0 2px 6px rgba(0,0,0,0.5);
+  --hw-shadow-recess: inset 0 2px 4px rgba(0,0,0,0.6);
+
+  --hw-font: 'JetBrains Mono', monospace;
+
+  --hw-panel-bg: #181818;
+  --hw-panel-border: #252525;
+  --hw-panel-border-top: #2a2a2a;
+  --hw-panel-border-bottom: #1a1a1a;
+  --hw-panel-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  --hw-tile-bg: #111;
+  --hw-title-bg: #0f0f0f;
+}
+
+[data-theme="light"] {
+  --hw-bg-recess:   #efefef;
+  --hw-bg-track:    #eee;
+  --hw-bg-pit:      rgba(0,0,0,0.04);
+
+  --hw-border:      rgba(0,0,0,0.05);
+  --hw-border-deep: rgba(0,0,0,0.08);
+
+  --hw-accent:          #4d94f8;
+  --hw-accent-glow:     rgba(77,148,248,0.24);
+  --hw-accent-glow-s:   rgba(77,148,248,0.34);
+  --hw-accent-border:   rgba(77,148,248,0.38);
+  --hw-accent-dim:      rgba(77,148,248,0.18);
+
+  --hw-text-primary:   #1a1a1a;
+  --hw-text-secondary: #444;
+  --hw-text-muted:     #888;
+  --hw-text-dim:       #aaa;
+  --hw-text-engrave:   none;
+
+  --hw-grad-face:    linear-gradient(160deg, #fff 0%, #f5f5f5 50%, #eee 100%);
+  --hw-grad-face-sm: linear-gradient(160deg, #fafafa 0%, #f2f2f2 50%, #eaeaea 100%);
+  --hw-grad-face-hi: linear-gradient(160deg, #fff 0%, #f8f8f8 50%, #f0f0f0 100%);
+  --hw-grad-channel: rgba(0,0,0,0.03);
+
+  --hw-shadow-inset: none;
+  --hw-shadow-recess: none;
+
+  --hw-panel-bg: #f7f7f7;
+  --hw-panel-border: rgba(0,0,0,0.06);
+  --hw-panel-border-top: rgba(0,0,0,0.03);
+  --hw-panel-border-bottom: rgba(0,0,0,0.08);
+  --hw-panel-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  --hw-tile-bg: #f2f2f2;
+  --hw-title-bg: #f4f4f4;
+}
+
+.hw-panel {
+  background: var(--hw-panel-bg);
+  border: 1px solid var(--hw-panel-border);
+  overflow: hidden;
+}
+
+/* Selection inside panels */
+.hw-panel ::selection,
+.hw-panel::selection {
+  background: var(--hw-accent);
+  color: #fff;
+}
+
+/* ============================================
+   Title bar
+   ============================================ */
+.app-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  min-height: 44px;
+  box-sizing: border-box;
+  background: var(--hw-title-bg);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.app-traffic {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+.app-traffic button {
+  transition: opacity 0.15s;
+}
+.app-traffic button:hover { opacity: 0.8; }
+
+.app-close,
+.app-minimize,
+.app-maximize {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.app-close {
+  background: #e74c3c;
+}
+
+.app-close::after {
+  content: '×';
+  font-size: 15px;
+  color: transparent;
+  transition: color 0.15s;
+}
+
+.app-close:hover::after {
+  color: rgba(0, 0, 0, 0.85);
+}
+.app-minimize {
+  background: #f1c40f;
+}
+
+.app-minimize::after {
+  content: '−';
+  font-size: 15px;
+  color: transparent;
+  transition: color 0.15s;
+}
+
+.app-minimize:hover::after {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.app-maximize {
+  background: #2ecc71;
+}
+
+.app-maximize::after {
+  content: '⤢';
+  font-size: 15px;
+  color: transparent;
+  transition: color 0.15s;
+}
+
+.app-maximize:hover::after {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.app-title-text {
+  font-family: var(--hw-font);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--hw-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-shadow: var(--hw-text-engrave);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.app-title-line {
+  height: 1px;
+  background: var(--hw-border);
+}
+
+/* ============================================
+   LCD status readout
+   ============================================ */
+/* Dark mode LCD */
+.app-lcd {
+  background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.15) 100%);
+  border-radius: var(--radius-md);
+  padding: 1px;
+}
+.app-lcd-screen {
+  background: #0e0e0e;
+  border-radius: var(--radius-md);
+  padding: 4px 10px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.5);
+}
+.app-lcd-led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #27ae60;
+  box-shadow: 0 0 6px rgba(39,174,96,0.6), 0 0 2px rgba(39,174,96,0.4);
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+[data-theme="light"] .app-lcd-led {
+  background: #34c759;
+  box-shadow: none;
+}
+.app-lcd-led--active {
+  background: var(--hw-accent);
+  box-shadow: 0 0 6px var(--hw-accent-glow);
+  animation: app-lcd-blink 1s ease-in-out infinite;
+}
+@keyframes app-lcd-blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+.app-lcd-text {
+  flex: 1;
+  text-align: right;
+  font-family: var(--hw-font);
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--hw-text-secondary, #999);
+  text-shadow: none;
+  position: relative;
+  z-index: 1;
+}
+.app-lcd--active .app-lcd-text {
+  color: var(--hw-text-primary, #e8e8e8);
+  text-shadow: none;
+}
+
+/* Light mode LCD */
+[data-theme="light"] .app-lcd {
+  background: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+[data-theme="light"] .app-lcd-screen {
+  background: rgba(0,0,0,0.04);
+  border-radius: var(--radius-md);
+  box-shadow: none !important;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.15), inset 0 -1px 0 rgba(255,255,255,0.4);
+}
+[data-theme="light"] .app-lcd-text {
+  color: rgba(0,0,0,0.5);
+  text-shadow: none;
+}
+[data-theme="light"] .app-lcd--active .app-lcd-text {
+  color: #2a3038;
+  text-shadow: none;
+}
+
+/* ============================================
+   Empty state
+   ============================================ */
+.app-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--hw-text-dim);
+  font-family: var(--hw-font);
+  font-size: 13px;
+}

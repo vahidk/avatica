@@ -1,0 +1,8 @@
+extends: electron-builder.yml
+
+mac:
+  identity: null
+  target:
+    - target: dmg
+      arch:
+        - universal

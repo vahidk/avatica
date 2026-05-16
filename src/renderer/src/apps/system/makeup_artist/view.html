@@ -1,0 +1,88 @@
+<app-view>
+  <app-row>
+    <app-file name="reference" label="$yourPhoto" accept="image/*"></app-file>
+  </app-row>
+  <app-mode name="gender" value="female">
+    <app-mode-option value="female" label="$female" icon="venus">
+      <app-image-select name="look" label="$makeupLook" required>
+        <option value="natural" label="$natural" image="female/natural.jpg"></option>
+        <option value="glam" label="$glam" image="female/glam.jpg"></option>
+        <option value="smoky-eye" label="$smokyEye" image="female/smoky-eye.jpg"></option>
+        <option value="dewy" label="$dewy" image="female/dewy.jpg"></option>
+        <option value="bold-lip" label="$boldLip" image="female/bold-lip.jpg"></option>
+        <option value="editorial" label="$editorial" image="female/editorial.jpg"></option>
+        <option value="sculpted" label="$sculpted" image="female/sculpted.jpg"></option>
+        <option value="age-defying" label="$agedefying" image="female/age-defying.jpg"></option>
+        <option value="vintage" label="$vintage" image="female/vintage.jpg"></option>
+
+      </app-image-select>
+      <app-image-select name="skin" label="$skinTone" required>
+        <option value="fair" label="$fair" image="female/fair.jpg"></option>
+        <option value="light" label="$light" image="female/light.jpg"></option>
+        <option value="medium" label="$medium" image="female/medium.jpg"></option>
+        <option value="olive" label="$olive" image="female/olive.jpg"></option>
+        <option value="tan" label="$tan" image="female/tan.jpg"></option>
+        <option value="caramel" label="$caramel" image="female/caramel.jpg"></option>
+        <option value="brown" label="$brown" image="female/brown.jpg"></option>
+        <option value="dark" label="$dark" image="female/dark.jpg"></option>
+        <option value="deep" label="$deep" image="female/deep.jpg"></option>
+      </app-image-select>
+      <app-image-select name="views" multiple label="$views" required>
+        <option value="front" label="$front" image="female/view-front.jpg"></option>
+        <option value="three-quarter" label="$threequarter" image="female/view-three-quarter.jpg"></option>
+        <option value="profile" label="$profile" image="female/view-profile.jpg"></option>
+        <option value="full-face" label="$fullFace" image="female/view-full-face.jpg"></option>
+        <option value="dramatic" label="$dramaticLight" image="female/view-dramatic.jpg"></option>
+        <option value="soft-glow" label="$softGlow" image="female/view-soft-glow.jpg"></option>
+        <option value="high-contrast" label="$highContrast" image="female/view-high-contrast.jpg"></option>
+        <option value="butterfly" label="$butterfly" image="female/view-butterfly.jpg"></option>
+        <option value="warm-tone" label="$warmTone" image="female/view-warm-tone.jpg"></option>
+      </app-image-select>
+    </app-mode-option>
+    <app-mode-option value="male" label="$male" icon="mars">
+      <app-image-select name="look" label="$makeupLook" required>
+        <option value="natural" label="$natural" image="male/natural.jpg"></option>
+        <option value="glam" label="$glam" image="male/glam.jpg"></option>
+        <option value="smoky-eye" label="$smokyEye" image="male/smoky-eye.jpg"></option>
+        <option value="dewy" label="$dewy" image="male/dewy.jpg"></option>
+        <option value="bold-lip" label="$boldLip" image="male/bold-lip.jpg"></option>
+        <option value="editorial" label="$editorial" image="male/editorial.jpg"></option>
+        <option value="sculpted" label="$sculpted" image="male/sculpted.jpg"></option>
+        <option value="age-defying" label="$agedefying" image="male/age-defying.jpg"></option>
+        <option value="vintage" label="$vintage" image="male/vintage.jpg"></option>
+
+      </app-image-select>
+      <app-image-select name="skin" label="$skinTone" required>
+        <option value="fair" label="$fair" image="male/fair.jpg"></option>
+        <option value="light" label="$light" image="male/light.jpg"></option>
+        <option value="medium" label="$medium" image="male/medium.jpg"></option>
+        <option value="olive" label="$olive" image="male/olive.jpg"></option>
+        <option value="tan" label="$tan" image="male/tan.jpg"></option>
+        <option value="caramel" label="$caramel" image="male/caramel.jpg"></option>
+        <option value="brown" label="$brown" image="male/brown.jpg"></option>
+        <option value="dark" label="$dark" image="male/dark.jpg"></option>
+        <option value="deep" label="$deep" image="male/deep.jpg"></option>
+      </app-image-select>
+      <app-image-select name="views" multiple label="$views" required>
+        <option value="front" label="$front" image="male/view-front.jpg"></option>
+        <option value="three-quarter" label="$threequarter" image="male/view-three-quarter.jpg"></option>
+        <option value="profile" label="$profile" image="male/view-profile.jpg"></option>
+        <option value="full-face" label="$fullFace" image="male/view-full-face.jpg"></option>
+        <option value="dramatic" label="$dramaticLight" image="male/view-dramatic.jpg"></option>
+        <option value="soft-glow" label="$softGlow" image="male/view-soft-glow.jpg"></option>
+        <option value="high-contrast" label="$highContrast" image="male/view-high-contrast.jpg"></option>
+        <option value="butterfly" label="$butterfly" image="male/view-butterfly.jpg"></option>
+        <option value="warm-tone" label="$warmTone" image="male/view-warm-tone.jpg"></option>
+      </app-image-select>
+    </app-mode-option>
+  </app-mode>
+  <app-row>
+    <app-select name="model" label="$model" options="$providers.image.generate"></app-select>
+    <app-select name="aspectRatio" value="1:1" label="$aspectRatio" options="$providers.image.generate[model].aspectRatio"></app-select>
+    <app-select name="imageSize" value="1K" label="$imageSize" options="$providers.image.generate[model].imageSize"></app-select>
+  </app-row>
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="Custom instructions (optional)"></app-input>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

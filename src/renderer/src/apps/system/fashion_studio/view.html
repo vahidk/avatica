@@ -1,0 +1,86 @@
+<app-view>
+  <app-row>
+    <app-file name="reference" label="$modelPhoto" accept="image/*"></app-file>
+  </app-row>
+  <app-mode name="gender" value="female">
+    <app-mode-option value="female" label="$female" icon="venus">
+      <app-image-select name="style" label="$style" required>
+        <option value="editorial" label="$editorial" image="female/editorial.jpg"></option>
+        <option value="haute-couture" label="$hauteCouture" image="female/haute-couture.jpg"></option>
+        <option value="glam" label="$glam" image="female/glam.jpg"></option>
+        <option value="minimalist" label="$minimalist" image="female/minimalist.jpg"></option>
+        <option value="streetwear" label="$streetwear" image="female/streetwear.jpg"></option>
+        <option value="athleisure" label="$athleisure" image="female/athleisure.jpg"></option>
+        <option value="bohemian" label="$bohemian" image="female/bohemian.jpg"></option>
+        <option value="y2k" label="$y2k" image="female/y2k.jpg"></option>
+        <option value="techwear" label="$techwear" image="female/techwear.jpg"></option>
+      </app-image-select>
+      <app-image-select name="setting" label="$setting" required>
+        <option value="studio-white" label="$studio" image="female/studio-white.jpg"></option>
+        <option value="indoor-lifestyle" label="$indoor" image="female/indoor.jpg"></option>
+        <option value="golden-hour" label="$goldenHour" image="female/golden-hour.jpg"></option>
+        <option value="beach" label="$beach" image="female/beach.jpg"></option>
+        <option value="cafe" label="Café" image="female/cafe.jpg"></option>
+        <option value="urban-street" label="$urban" image="female/urban-street.jpg"></option>
+        <option value="rooftop" label="$rooftop" image="female/rooftop.jpg"></option>
+        <option value="runway" label="$runway" image="female/runway.jpg"></option>
+        <option value="neon" label="$neon" image="female/neon.jpg"></option>
+      </app-image-select>
+      <app-image-select name="shots" multiple label="$shots" required>
+        <option value="full-body-front" label="$fullBody" image="female/shot-full.jpg"></option>
+        <option value="waist-up" label="$waistUp" image="female/shot-waist.jpg"></option>
+        <option value="close-up" label="$closeup" image="female/shot-closeup.jpg"></option>
+        <option value="profile" label="$profile" image="female/shot-profile.jpg"></option>
+        <option value="back" label="$back" image="female/shot-back.jpg"></option>
+        <option value="over-shoulder" label="$overShoulder" image="female/shot-shoulder.jpg"></option>
+        <option value="walking" label="$walking" image="female/shot-walking.jpg"></option>
+        <option value="sitting" label="$sitting" image="female/shot-sitting.jpg"></option>
+        <option value="low-angle" label="$lowAngle" image="female/shot-low-angle.jpg"></option>
+      </app-image-select>
+    </app-mode-option>
+    <app-mode-option value="male" label="$male" icon="mars">
+      <app-image-select name="style" label="$style" required>
+        <option value="editorial" label="$editorial" image="male/editorial.jpg"></option>
+        <option value="haute-couture" label="$hauteCouture" image="male/haute-couture.jpg"></option>
+        <option value="glam" label="$glam" image="male/glam.jpg"></option>
+        <option value="minimalist" label="$minimalist" image="male/minimalist.jpg"></option>
+        <option value="streetwear" label="$streetwear" image="male/streetwear.jpg"></option>
+        <option value="athleisure" label="$athleisure" image="male/athleisure.jpg"></option>
+        <option value="bohemian" label="$bohemian" image="male/bohemian.jpg"></option>
+        <option value="y2k" label="$y2k" image="male/y2k.jpg"></option>
+        <option value="techwear" label="$techwear" image="male/techwear.jpg"></option>
+      </app-image-select>
+      <app-image-select name="setting" label="$setting" required>
+        <option value="studio-white" label="$studio" image="male/studio-white.jpg"></option>
+        <option value="indoor-lifestyle" label="$indoor" image="male/indoor.jpg"></option>
+        <option value="golden-hour" label="$goldenHour" image="male/golden-hour.jpg"></option>
+        <option value="beach" label="$beach" image="male/beach.jpg"></option>
+        <option value="cafe" label="Café" image="male/cafe.jpg"></option>
+        <option value="urban-street" label="$urban" image="male/urban-street.jpg"></option>
+        <option value="rooftop" label="$rooftop" image="male/rooftop.jpg"></option>
+        <option value="runway" label="$runway" image="male/runway.jpg"></option>
+        <option value="neon" label="$neon" image="male/neon.jpg"></option>
+      </app-image-select>
+      <app-image-select name="shots" multiple label="$shots" required>
+        <option value="full-body-front" label="$fullBody" image="male/shot-full.jpg"></option>
+        <option value="waist-up" label="$waistUp" image="male/shot-waist.jpg"></option>
+        <option value="close-up" label="$closeup" image="male/shot-closeup.jpg"></option>
+        <option value="profile" label="$profile" image="male/shot-profile.jpg"></option>
+        <option value="back" label="$back" image="male/shot-back.jpg"></option>
+        <option value="over-shoulder" label="$overShoulder" image="male/shot-shoulder.jpg"></option>
+        <option value="walking" label="$walking" image="male/shot-walking.jpg"></option>
+        <option value="sitting" label="$sitting" image="male/shot-sitting.jpg"></option>
+        <option value="low-angle" label="$lowAngle" image="male/shot-low-angle.jpg"></option>
+      </app-image-select>
+    </app-mode-option>
+  </app-mode>
+  <app-row>
+    <app-select name="model" label="$model" options="$providers.image.generate"></app-select>
+    <app-select name="aspectRatio" value="3:4" label="$aspectRatio" options="$providers.image.generate[model].aspectRatio"></app-select>
+    <app-select name="imageSize" value="1K" label="$imageSize" options="$providers.image.generate[model].imageSize"></app-select>
+  </app-row>
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="Custom instructions (optional)"></app-input>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

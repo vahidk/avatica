@@ -1,0 +1,63 @@
+{
+  "id": "makeup_artist",
+  "name": "Makeup Artist",
+  "menu": [
+    "Image"
+  ],
+  "order": 22,
+  "icon": "palette",
+  "type": "system",
+  "function": {
+    "description": "Generate makeup looks from a reference photo, style, skin tone, and view selections",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "reference": {
+          "type": "string",
+          "description": "File ID of reference person photo"
+        },
+        "gender": {
+          "type": "string",
+          "description": "Gender: female or male",
+          "enum": ["female", "male"],
+          "default": "female"
+        },
+        "look": {
+          "type": "string",
+          "description": "Makeup look preset"
+        },
+        "skin": {
+          "type": "string",
+          "description": "Skin tone preset"
+        },
+        "views": {
+          "type": "string",
+          "description": "Comma-separated view/angle types"
+        },
+        "prompt": {
+          "type": "string",
+          "description": "Optional custom instructions"
+        },
+        "model": {
+          "type": "string",
+          "description": "Image model to use"
+        },
+        "imageSize": {
+          "type": "string",
+          "default": "1K",
+          "description": "Output image size"
+        },
+        "aspectRatio": {
+          "type": "string",
+          "default": "1:1",
+          "description": "Aspect ratio of generated images"
+        }
+      },
+      "required": [
+        "look",
+        "skin",
+        "views"
+      ]
+    }
+  }
+}

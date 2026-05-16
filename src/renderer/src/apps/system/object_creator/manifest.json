@@ -1,0 +1,39 @@
+{
+  "id": "object_creator",
+  "name": "Object Creator",
+  "menu": [
+    "Entity"
+  ],
+  "order": 82,
+  "icon": "cube",
+  "type": "system",
+  "function": {
+    "description": "Generate an object or product with reference image, description, and attributes",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "Object concept or description"
+        },
+        "style": {
+          "type": "string",
+          "default": "cinematic",
+          "description": "Art style"
+        },
+        "imageSize": {
+          "type": "string",
+          "default": "1K",
+          "description": "Output image size"
+        },
+        "model": {
+          "type": "string",
+          "description": "Image model to use"
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  }
+}

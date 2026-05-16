@@ -1,0 +1,63 @@
+{
+  "id": "fashion_studio",
+  "name": "Fashion Studio",
+  "menu": [
+    "Image"
+  ],
+  "order": 20,
+  "icon": "shirt",
+  "type": "system",
+  "function": {
+    "description": "Generate a fashion photoshoot from a reference photo, style, setting, and shot selections",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "reference": {
+          "type": "string",
+          "description": "File ID of reference person photo"
+        },
+        "gender": {
+          "type": "string",
+          "description": "Gender: female or male",
+          "enum": ["female", "male"],
+          "default": "female"
+        },
+        "style": {
+          "type": "string",
+          "description": "Fashion style preset"
+        },
+        "setting": {
+          "type": "string",
+          "description": "Photoshoot setting/environment"
+        },
+        "shots": {
+          "type": "string",
+          "description": "Comma-separated shot types"
+        },
+        "prompt": {
+          "type": "string",
+          "description": "Optional custom instructions"
+        },
+        "model": {
+          "type": "string",
+          "description": "Image model to use"
+        },
+        "imageSize": {
+          "type": "string",
+          "default": "1K",
+          "description": "Output image size"
+        },
+        "aspectRatio": {
+          "type": "string",
+          "default": "3:4",
+          "description": "Aspect ratio of generated images"
+        }
+      },
+      "required": [
+        "style",
+        "setting",
+        "shots"
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "character_creator",
+  "name": "Character Creator",
+  "menu": [
+    "Entity"
+  ],
+  "order": 81,
+  "icon": "user",
+  "type": "system",
+  "function": {
+    "description": "Generate a character with portrait, description, and attributes",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "Character concept or description"
+        },
+        "style": {
+          "type": "string",
+          "default": "cinematic",
+          "description": "Art style"
+        },
+        "imageSize": {
+          "type": "string",
+          "default": "1K",
+          "description": "Output image size"
+        },
+        "voicePitch": {
+          "type": "string",
+          "description": "Voice pitch adjustment"
+        },
+        "voiceTone": {
+          "type": "string",
+          "description": "Voice tone quality"
+        },
+        "voicePace": {
+          "type": "string",
+          "description": "Voice speaking pace"
+        },
+        "model": {
+          "type": "string",
+          "description": "Image model to use"
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  }
+}

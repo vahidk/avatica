@@ -1,0 +1,36 @@
+You are producing metadata for a cinematic shot. Return a JSON object with two fields: name and description.
+
+## name
+
+- 2-4 word title for the shot
+- no quotes
+- no trailing punctuation
+
+## description
+
+A self-contained description of the shot as it unfolds in motion, written for a video model to animate from the first frame.
+
+Must include:
+- what the subject(s) do — actions, gestures, gaze, blocking
+- how the action evolves from the starting frame
+- emotional beats and pacing
+- character names and relevant context so the description stands alone
+- any dialogue from the user's prompt — VERBATIM, never paraphrased or shortened. Keep dialogue in its original form, with character names.
+
+May include (only when the user's prompt implies it):
+- atmospheric motion (wind, smoke, rain, light shifts)
+
+Must NOT include:
+- camera movement, duration, resolution, or post-processing
+- first frame composition: framing, angle, lens
+- meta-references like "the user's prompt"
+
+Length: 2-4 sentences (not counting dialogue).
+
+## Inputs
+
+Shot brief (context only):
+{{brief}}
+
+Final image prompt used for the frame:
+{{framePrompt}}

@@ -1,0 +1,28 @@
+<app-view>
+  <app-mode name="mode" value="generate" label="$mode">
+    <app-mode-option value="generate" label="$generate" icon="wand-magic-sparkles">
+      <app-row>
+        <app-file name="referenceImages" label="$referenceImages" multiple max="4" accept="image/*"></app-file>
+      </app-row>
+      <app-row>
+        <app-select name="model" label="$model" options="$providers.image.generate"></app-select>
+        <app-select name="aspectRatio" value="1:1" label="$aspectRatio" options="$providers.image.generate[model].aspectRatio"></app-select>
+        <app-select name="imageSize" value="1K" label="$imageSize" options="$providers.image.generate[model].imageSize"></app-select>
+      </app-row>
+    </app-mode-option>
+    <app-mode-option value="edit" label="$edit" icon="pen-to-square">
+      <app-row>
+        <app-file name="sourceImage" label="$sourceImage" accept="image/*" required></app-file>
+      </app-row>
+      <app-row>
+        <app-select name="model" label="$model" options="$providers.image.edit"></app-select>
+        <app-select name="aspectRatio" value="1:1" label="$aspectRatio" options="$providers.image.edit[model].aspectRatio"></app-select>
+        <app-select name="imageSize" value="1K" label="$imageSize" options="$providers.image.edit[model].imageSize"></app-select>
+      </app-row>
+    </app-mode-option>
+  </app-mode>
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="Describe the image — subject, style, mood, details..." required></app-input>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

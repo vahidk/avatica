@@ -1,0 +1,1 @@
+Generate a short filename (2-4 words, lowercase, hyphens between words) that captures the essence of the described content. No file extension. No quotes. No explanation. Just the filename.

@@ -1,0 +1,25 @@
+.code-editor {
+  flex: 1;
+  overflow: hidden;
+  background: var(--hw-panel-bg);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.code-editor .cm-editor {
+  height: 100%;
+  background-color: var(--hw-panel-bg) !important;
+}
+
+.code-editor .cm-editor .cm-gutters {
+  background-color: var(--hw-panel-bg) !important;
+  border-right: none;
+}
+
+.code-editor .cm-editor .cm-activeLineGutter,
+.code-editor .cm-editor .cm-activeLine {
+  background-color: transparent !important;
+}
+
+.code-editor .cm-editor.cm-focused {
+  outline: none;
+}

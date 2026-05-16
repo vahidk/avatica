@@ -1,0 +1,30 @@
+.mfe {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mfe__section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mfe__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mfe__label {
+  font-family: var(--hw-font, monospace);
+  font-size: 11px;
+  color: var(--hw-text-primary, #e8e8e8);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  width: 80px;
+  flex-shrink: 0;
+}

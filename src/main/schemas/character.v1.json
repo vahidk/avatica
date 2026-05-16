@@ -1,0 +1,54 @@
+{
+  "id": "character.v1",
+  "name": "Character",
+  "extension": ".char",
+  "icon": "fa-solid fa-user",
+  "thumbnail": "references.front",
+  "jsonSchema": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" },
+      "species": { "type": "string", "default": "human" },
+      "identity": {
+        "type": "object",
+        "properties": {
+          "age": { "type": "string" },
+          "gender": { "type": "string" },
+          "ethnicity": { "type": "string" },
+          "build": { "type": "string" }
+        }
+      },
+      "appearance": {
+        "type": "object",
+        "properties": {
+          "hair": { "type": "string" },
+          "eyes": { "type": "string" },
+          "features": { "type": "string" },
+          "extra": { "type": "string" }
+        }
+      },
+      "character": {
+        "type": "object",
+        "properties": {
+          "personality": { "type": "string" },
+          "backstory": { "type": "string" }
+        }
+      },
+      "voice": {
+        "type": "object",
+        "properties": {
+          "pitch": { "type": "string" },
+          "tone": { "type": "string" },
+          "pace": { "type": "string" },
+          "extra": { "type": "string" }
+        }
+      },
+      "references": {
+        "type": "object",
+        "additionalProperties": { "type": "string" }
+      },
+      "tags": { "type": "array", "items": { "type": "string" } }
+    },
+    "required": ["name"]
+  }
+}

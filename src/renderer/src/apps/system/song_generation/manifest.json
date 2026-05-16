@@ -1,0 +1,61 @@
+{
+  "id": "song_generation",
+  "name": "Song Generation",
+  "menu": [
+    "Audio"
+  ],
+  "order": 60,
+  "icon": "music",
+  "type": "system",
+  "function": {
+    "description": "Generate music from a text prompt with optional genre, mood, tempo, and instrument controls",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "Text prompt describing what to generate"
+        },
+        "model": {
+          "type": "string",
+          "description": "AI model to use",
+          "enum": [
+            "lyria-3-pro"
+          ]
+        },
+        "genre": {
+          "type": "string",
+          "description": "Music genre"
+        },
+        "mood": {
+          "type": "string",
+          "description": "Mood or feeling of the song"
+        },
+        "tempo": {
+          "type": "string",
+          "description": "Tempo of the song"
+        },
+        "instruments": {
+          "type": "string",
+          "description": "Comma-separated instruments to feature"
+        },
+        "duration": {
+          "type": "number",
+          "default": 30,
+          "description": "Duration in seconds"
+        },
+        "format": {
+          "type": "string",
+          "description": "Output format",
+          "enum": [
+            "mp3",
+            "wav"
+          ]
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  }
+}

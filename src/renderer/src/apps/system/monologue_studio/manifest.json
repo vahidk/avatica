@@ -1,0 +1,65 @@
+{
+  "id": "monologue_studio",
+  "name": "Monologue Studio",
+  "menu": [
+    "Video"
+  ],
+  "order": 81,
+  "icon": "microphone-lines",
+  "type": "system",
+  "function": {
+    "description": "Turn a shot + monologue text into a full delivery video. Splits the text into chunks of the target duration, generates each chunk in parallel from the shot's frame, and assembles a sequence.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "shot": {
+          "type": "string",
+          "description": "The .shot file the performer delivers from (provides starting frame and setting)"
+        },
+        "prompt": {
+          "type": "string",
+          "description": "The monologue text. Can be raw spoken lines or a full script with headers and physical cues — they are stripped automatically."
+        },
+        "chunkSize": {
+          "type": "string",
+          "description": "Seconds per generated video chunk",
+          "enum": [
+            "4",
+            "6",
+            "8"
+          ]
+        },
+        "model": {
+          "type": "string",
+          "description": "Video model — must support image_to_video",
+          "enum": [
+            "veo-3.1-lite",
+            "veo-3.1-fast",
+            "veo-3.1"
+          ]
+        },
+        "resolution": {
+          "type": "string",
+          "description": "Output resolution per chunk",
+          "enum": [
+            "720p",
+            "1080p",
+            "4k"
+          ]
+        },
+        "aspectRatio": {
+          "type": "string",
+          "description": "Aspect ratio",
+          "enum": [
+            "16:9",
+            "9:16"
+          ]
+        }
+      },
+      "required": [
+        "shot",
+        "prompt"
+      ]
+    }
+  }
+}

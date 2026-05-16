@@ -1,0 +1,58 @@
+{
+  "id": "image_generation",
+  "name": "Image Generation",
+  "menu": [
+    "Image"
+  ],
+  "order": 10,
+  "icon": "image",
+  "type": "system",
+  "function": {
+    "description": "Generate or edit images. Modes: generate (text-to-image with optional reference images for style), edit (modify an existing image with a text prompt).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "Text prompt describing what to generate"
+        },
+        "model": {
+          "type": "string",
+          "description": "AI model to use",
+          "enum": [
+            "gemini-3.1-flash-image"
+          ]
+        },
+        "mode": {
+          "type": "string",
+          "description": "Image mode",
+          "enum": [
+            "generate",
+            "edit"
+          ]
+        },
+        "aspectRatio": {
+          "type": "string",
+          "default": "1:1",
+          "description": "Aspect ratio"
+        },
+        "imageSize": {
+          "type": "string",
+          "default": "1K",
+          "description": "Output image size"
+        },
+        "sourceImage": {
+          "type": "string",
+          "description": "File ID of image to edit (edit mode)"
+        },
+        "referenceImages": {
+          "type": "string",
+          "description": "Comma-separated file IDs of reference images for style guidance (generate mode)"
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  }
+}

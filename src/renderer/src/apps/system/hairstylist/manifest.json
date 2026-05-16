@@ -1,0 +1,26 @@
+{
+  "id": "hairstylist",
+  "name": "Hair Stylist",
+  "menu": ["Image"],
+  "order": 21,
+  "icon": "scissors",
+  "type": "system",
+  "function": {
+    "description": "Generate hairstyle visualizations from a reference photo, style, color, and view selections",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "reference": {"type": "string", "description": "File ID of reference person photo"},
+        "gender": {"type": "string", "description": "Gender: female or male", "enum": ["female", "male"], "default": "female"},
+        "style": {"type": "string", "description": "Hairstyle preset"},
+        "color": {"type": "string", "description": "Hair color preset"},
+        "views": {"type": "string", "description": "Comma-separated view/angle types"},
+        "prompt": {"type": "string", "description": "Optional custom instructions"},
+        "model": {"type": "string", "description": "Image model to use"},
+        "imageSize": {"type": "string", "default": "1K", "description": "Output image size"},
+        "aspectRatio": {"type": "string", "default": "3:4", "description": "Aspect ratio of generated images"}
+      },
+      "required": ["style", "color", "views"]
+    }
+  }
+}

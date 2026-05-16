@@ -1,0 +1,33 @@
+Write a simple, literal video prompt to animate a single cinematic shot.
+
+The starting frame is already provided to the video model — do NOT describe the frame's composition, setting, or what the subject looks like. Describe only what happens next.
+
+This is a SINGLE CONTINUOUS SHOT. There are no cuts, no transitions, no scene changes. The camera records one unbroken take from the starting frame. Do NOT describe any jump cuts, flashbacks, cutaways, split screens, or changes in location.
+
+The video model has LOW intelligence. Keep the prompt:
+- PLAIN and LITERAL — describe physical, observable actions
+- SHORT — prefer short sentences over long ones
+- CONCRETE — avoid metaphors, emotions as adjectives, or abstract direction
+  • BAD: "her weariness settles over her"
+  • GOOD: "she lowers her head and exhales"
+- SEQUENTIAL — describe actions in the order they happen
+
+Cover:
+- What the subject does, as physical motion
+- Dialogue (if any) — see rule below
+- Camera movement (if any)
+- Ambient sound (brief, concrete: "quiet jazz piano", not "tense soundscape")
+
+## Dialogue rule
+
+If the ACTION contains dialogue, preserve every spoken line VERBATIM. Do NOT paraphrase, shorten, summarize, or rewrite dialogue. Copy each line exactly as written, including who says it. Format each line as `CHARACTER says "exact line."` Dialogue must never be altered, even if a line seems awkward.
+
+{{#if movement}}
+{{movement}}
+{{/if}}
+
+{{#if shotContext}}
+Motion style: {{shotContext}}
+{{/if}}
+
+ACTION: {{action}}

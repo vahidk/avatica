@@ -1,0 +1,75 @@
+{
+  "id": "video_generation",
+  "name": "Video Generation",
+  "menu": [
+    "Video"
+  ],
+  "order": 40,
+  "icon": "video",
+  "type": "system",
+  "function": {
+    "description": "Generate, transform, or extend videos. Modes: generate (text-to-video), image_to_video (animate a starting image), interpolate (transition between two frames), extend (continue from last frame).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "Text prompt describing what to generate"
+        },
+        "model": {
+          "type": "string",
+          "description": "AI model to use",
+          "enum": [
+            "veo-3.1-lite",
+            "veo-3.1-fast",
+            "veo-3.1"
+          ]
+        },
+        "mode": {
+          "type": "string",
+          "description": "Video mode",
+          "enum": [
+            "generate",
+            "image_to_video",
+            "interpolate",
+            "extend"
+          ]
+        },
+        "aspectRatio": {
+          "type": "string",
+          "default": "16:9",
+          "description": "Aspect ratio"
+        },
+        "resolution": {
+          "type": "string",
+          "default": "1080p",
+          "description": "Output resolution"
+        },
+        "durationSeconds": {
+          "type": "number",
+          "default": 8,
+          "description": "Duration in seconds"
+        },
+        "startImage": {
+          "type": "string",
+          "description": "File ID of starting image (image_to_video or interpolate mode)"
+        },
+        "endImage": {
+          "type": "string",
+          "description": "File ID of ending image (interpolate mode)"
+        },
+        "sourceVideo": {
+          "type": "string",
+          "description": "File ID of source video (extend mode)"
+        },
+        "referenceImages": {
+          "type": "string",
+          "description": "Comma-separated file IDs of reference images for style guidance"
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+You are splitting a monologue into chunks so each chunk can be delivered as one video clip of approximately {{seconds}} seconds.
+
+Source text:
+---
+{{text}}
+---
+
+First, extract the performer's spoken lines. If the source contains any of these, strip them — they are NOT part of what the performer says aloud:
+- Markdown headers (`# Characters`, `# Scenes`, `# Script`, `## Beat ...`)
+- Character or location descriptions (bullet points introducing the performer or setting)
+- Physical cues in italic parentheses like `*(lean forward)*`
+- `> **SHOT:**` notes
+- Any surrounding quotation marks that wrap the spoken lines
+
+Then split the resulting spoken text into chunks. Each chunk must:
+- Contain the verbatim spoken text, unchanged — DO NOT paraphrase, rewrite, shorten, or clean up. Every word must appear as written.
+- Be deliverable in approximately {{seconds}} seconds at a natural speaking pace (roughly {{words}} words).
+- Break on natural pause points — sentence ends, clause boundaries, breath marks. Never mid-word, never mid-clause if avoidable.
+- Flow into the next chunk without losing meaning.
+
+Return a JSON object with a single `chunks` field: an array of strings. No preamble, no extra fields.

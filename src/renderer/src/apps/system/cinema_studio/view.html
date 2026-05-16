@@ -1,0 +1,32 @@
+<app-view>
+  <app-row>
+    <app-file name="shot" label="$shot" schema="shot.v1" required></app-file>
+    <app-file name="references" label="$references" multiple max="4" accept="image/*"></app-file>
+  </app-row>
+  <app-row>
+    <app-select name="cameraMovement" value="" label="$cameraMovement">
+      <option value="">Auto</option>
+      <option value="static">Static</option>
+      <option value="pan-left">Pan Left</option>
+      <option value="pan-right">Pan Right</option>
+      <option value="tilt-up">Tilt Up</option>
+      <option value="tilt-down">Tilt Down</option>
+      <option value="dolly-in">Dolly In</option>
+      <option value="dolly-out">Dolly Out</option>
+      <option value="tracking">Tracking</option>
+      <option value="crane-up">Crane Up</option>
+      <option value="crane-down">Crane Down</option>
+      <option value="handheld">Handheld</option>
+      <option value="orbit">Orbit</option>
+    </app-select>
+  </app-row>
+  <app-row>
+    <app-select name="model" value="veo-3.1-lite" label="$model" options="$providers.video.image_to_video"></app-select>
+    <app-select name="resolution" value="720p" label="$resolution" options="$providers.video.image_to_video[model].resolution"></app-select>
+    <app-select name="durationSeconds" value="4" label="$duration" options="$providers.video.image_to_video[model].durationSeconds"></app-select>
+  </app-row>
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="Describe the motion and action (optional — the shot's own description is used if empty)..."></app-input>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

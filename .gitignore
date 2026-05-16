@@ -1,0 +1,9 @@
+node_modules/
+out/
+dist/
+*.db
+*.tsbuildinfo
+.env
+.DS_Store
+build/embedded.provisionprofile
+.vscode

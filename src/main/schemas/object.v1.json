@@ -1,0 +1,40 @@
+{
+  "id": "object.v1",
+  "name": "Object",
+  "extension": ".obj",
+  "icon": "fa-solid fa-cube",
+  "thumbnail": "references.front",
+  "jsonSchema": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" },
+      "category": { "type": "string" },
+      "description": { "type": "string" },
+      "physical": {
+        "type": "object",
+        "properties": {
+          "material": { "type": "string" },
+          "color": { "type": "string" },
+          "size": { "type": "string" },
+          "shape": { "type": "string" },
+          "texture": { "type": "string" },
+          "extra": { "type": "string" }
+        }
+      },
+      "context": {
+        "type": "object",
+        "properties": {
+          "era": { "type": "string" },
+          "origin": { "type": "string" },
+          "usage": { "type": "string" }
+        }
+      },
+      "references": {
+        "type": "object",
+        "additionalProperties": { "type": "string" }
+      },
+      "tags": { "type": "array", "items": { "type": "string" } }
+    },
+    "required": ["name"]
+  }
+}

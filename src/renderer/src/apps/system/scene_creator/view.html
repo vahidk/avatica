@@ -1,0 +1,26 @@
+<app-view>
+  <app-row>
+    <app-select name="style" value="" label="$artStyle">
+      <option value="">Auto</option>
+      <option value="cinematic">Cinematic</option>
+      <option value="anime">Anime</option>
+      <option value="comic-book">Comic Book</option>
+      <option value="watercolor">Watercolor</option>
+      <option value="oil-painting">Oil Painting</option>
+      <option value="noir">Noir</option>
+      <option value="3d-render">3D Render</option>
+      <option value="pixel-art">Pixel Art</option>
+    </app-select>
+  </app-row>
+  <app-row>
+    <app-file name="referenceImage" label="$referenceImage" accept="image/*"></app-file>
+  </app-row>
+  <app-row>
+    <app-select name="model" label="$model" options="$providers.image.generate"></app-select>
+    <app-select name="imageSize" value="1K" label="$imageSize" options="$providers.image.generate[model].imageSize"></app-select>
+  </app-row>
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="Describe the location — setting, time of day, atmosphere, key details..." required></app-input>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

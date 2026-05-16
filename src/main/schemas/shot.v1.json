@@ -1,0 +1,38 @@
+{
+  "id": "shot.v1",
+  "name": "Shot",
+  "extension": ".shot",
+  "icon": "fa-solid fa-film",
+  "thumbnail": "references.frame",
+  "jsonSchema": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" },
+      "description": { "type": "string" },
+      "composition": {
+        "type": "object",
+        "properties": {
+          "framing": { "type": "string" },
+          "cameraAngle": { "type": "string" },
+          "lens": { "type": "string" },
+          "depthOfField": { "type": "string" }
+        }
+      },
+      "style": {
+        "type": "object",
+        "properties": {
+          "genre": { "type": "string" },
+          "mood": { "type": "string" },
+          "colorPalette": { "type": "string" },
+          "lighting": { "type": "string" }
+        }
+      },
+      "references": {
+        "type": "object",
+        "additionalProperties": { "type": "string" }
+      },
+      "tags": { "type": "array", "items": { "type": "string" } }
+    },
+    "required": ["name"]
+  }
+}

@@ -1,0 +1,52 @@
+<app-view>
+  <app-row>
+    <app-select name="method" value="" label="$method">
+      <option value="">Auto</option>
+      <option value="classic">Classic</option>
+      <option value="image-first">Image First</option>
+      <option value="character-first">Character First</option>
+      <option value="theme-first">Theme First</option>
+    </app-select>
+    <app-select name="genre" value="" label="$genre">
+      <option value="">Auto</option>
+      <option value="drama">Drama</option>
+      <option value="comedy">Comedy</option>
+      <option value="thriller">Thriller</option>
+      <option value="horror">Horror</option>
+      <option value="sci-fi">Sci-Fi</option>
+      <option value="romance">Romance</option>
+      <option value="action">Action</option>
+      <option value="documentary">Documentary</option>
+      <option value="music-video">Music Video</option>
+      <option value="commercial">Commercial</option>
+    </app-select>
+    <app-select name="style" value="" label="$style">
+      <option value="">Auto</option>
+      <option value="cinematic">Cinematic</option>
+      <option value="noir">Noir</option>
+      <option value="dreamy">Dreamy</option>
+      <option value="gritty-realism">Gritty Realism</option>
+      <option value="surreal">Surreal</option>
+      <option value="minimalist">Minimalist</option>
+      <option value="anime">Anime</option>
+      <option value="retro">Retro</option>
+      <option value="neon-cyberpunk">Neon Cyberpunk</option>
+      <option value="documentary">Documentary</option>
+    </app-select>
+    <app-select name="duration" value="" label="$duration">
+      <option value="">Auto</option>
+      <option value="15s">15s</option>
+      <option value="30s">30s</option>
+      <option value="1min">1 min</option>
+      <option value="2min">2 min</option>
+      <option value="5min">5 min</option>
+    </app-select>
+  </app-row>
+  <app-row>
+    <app-select name="model" value="gemini-3.1-pro" label="$model" options="$providers.text.generate"></app-select>
+  </app-row>
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="Describe the story — concept, premise, or a specific scene..." required></app-input>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

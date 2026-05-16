@@ -1,0 +1,40 @@
+{
+  "id": "speech_generation",
+  "name": "Speech Generation",
+  "menu": [
+    "Audio"
+  ],
+  "order": 70,
+  "icon": "microphone",
+  "type": "system",
+  "function": {
+    "description": "Generate speech audio from text with voice selection",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "Text prompt describing what to generate"
+        },
+        "model": {
+          "type": "string",
+          "description": "AI model to use",
+          "enum": [
+            "gemini-3.1-flash-tts"
+          ]
+        },
+        "voice": {
+          "type": "string",
+          "description": "Voice to use for speech"
+        },
+        "language": {
+          "type": "string",
+          "description": "Language for speech"
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  }
+}

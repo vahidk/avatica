@@ -1,0 +1,82 @@
+{
+  "id": "script_writer",
+  "name": "Script Writer",
+  "menu": [
+    "Script"
+  ],
+  "order": 100,
+  "icon": "scroll",
+  "type": "system",
+  "function": {
+    "description": "Generate a screenplay or script for short films, music videos, and AI video content",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "What the script is about — story idea, mood, genre, or specific scene"
+        },
+        "genre": {
+          "type": "string",
+          "description": "Genre of the script",
+          "enum": [
+            "drama",
+            "comedy",
+            "thriller",
+            "horror",
+            "sci-fi",
+            "romance",
+            "action",
+            "documentary",
+            "music-video",
+            "commercial"
+          ]
+        },
+        "method": {
+          "type": "string",
+          "description": "Scriptwriting approach",
+          "enum": [
+            "classic",
+            "image-first",
+            "character-first",
+            "theme-first"
+          ]
+        },
+        "style": {
+          "type": "string",
+          "description": "Visual/tonal style",
+          "enum": [
+            "cinematic",
+            "noir",
+            "dreamy",
+            "gritty-realism",
+            "surreal",
+            "minimalist",
+            "anime",
+            "retro",
+            "neon-cyberpunk",
+            "documentary"
+          ]
+        },
+        "duration": {
+          "type": "string",
+          "description": "Target duration of the final video",
+          "enum": [
+            "15s",
+            "30s",
+            "1min",
+            "2min",
+            "5min"
+          ]
+        },
+        "model": {
+          "type": "string",
+          "description": "Text model to use"
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  }
+}

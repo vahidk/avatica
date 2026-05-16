@@ -1,0 +1,100 @@
+{
+  "id": "shot_creator",
+  "name": "Shot Creator",
+  "menu": [
+    "Entity"
+  ],
+  "order": 79,
+  "icon": "camera",
+  "type": "system",
+  "function": {
+    "description": "Create a cinematic shot. Two modes: 'create' builds a new first frame from scene + characters + objects (use this for the first shot in a sequence). 'continue' creates a new camera angle of a moment that continues from a previous shot (use this when you want to cut to another angle while preserving characters, setting, and style). The resulting .shot asset is then animated by Cinema Studio.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["create", "continue"],
+          "default": "create",
+          "description": "'create' = new shot from scene + characters + objects. 'continue' = new camera angle following a previous shot; inherits style/characters from source shot."
+        },
+        "prompt": {
+          "type": "string",
+          "description": "Action description — what the shot shows (sets the starting pose/state). In 'continue' mode, describes what happens in the new angle."
+        },
+        "shot": {
+          "type": "string",
+          "description": "Source shot file ID (continue mode only) — the previous shot that provides style, character context, and visual continuity."
+        },
+        "scene": {
+          "type": "string",
+          "description": "File ID of a .scene file (create mode only)"
+        },
+        "characters": {
+          "type": "string",
+          "description": "Comma-separated file IDs of .char files. In continue mode, only needed for NEW characters entering the frame."
+        },
+        "objects": {
+          "type": "string",
+          "description": "Comma-separated file IDs of .obj files. In continue mode, only needed for NEW objects entering the frame."
+        },
+        "genre": {
+          "type": "string",
+          "enum": ["drama", "horror", "thriller", "sci-fi", "fantasy", "romance", "western", "noir", "comedy", "action", "documentary", "period", "animation", "experimental"],
+          "description": "Genre"
+        },
+        "mood": {
+          "type": "string",
+          "enum": ["tense", "serene", "melancholic", "euphoric", "ominous", "chaotic", "intimate", "epic", "dreamlike", "mysterious", "nostalgic", "playful", "gritty", "ethereal"],
+          "description": "Mood or tone"
+        },
+        "colorPalette": {
+          "type": "string",
+          "enum": ["natural", "warm", "cool", "desaturated", "high-contrast", "neon", "monochrome", "vintage", "teal-orange", "pastel", "bleach-bypass", "cross-processed"],
+          "description": "Color palette for grading"
+        },
+        "framing": {
+          "type": "string",
+          "enum": ["extreme-close-up", "close-up", "medium-close-up", "medium", "medium-wide", "wide", "establishing"],
+          "description": "Shot framing"
+        },
+        "cameraAngle": {
+          "type": "string",
+          "enum": ["eye-level", "low-angle", "high-angle", "birds-eye", "dutch-angle", "over-the-shoulder"],
+          "description": "Camera angle"
+        },
+        "lens": {
+          "type": "string",
+          "enum": ["16mm", "24mm", "35mm", "50mm", "85mm", "100mm-macro", "135mm", "200mm", "anamorphic", "tilt-shift", "fisheye"],
+          "description": "Camera lens / focal length"
+        },
+        "depthOfField": {
+          "type": "string",
+          "enum": ["deep", "moderate", "shallow", "very-shallow", "rack-focus", "split-diopter"],
+          "description": "Depth of field"
+        },
+        "lighting": {
+          "type": "string",
+          "enum": ["natural", "golden-hour", "blue-hour", "harsh", "soft", "backlit", "silhouette", "chiaroscuro", "neon", "moonlit", "candlelit", "fluorescent", "volumetric", "low-key", "high-key"],
+          "description": "Lighting style"
+        },
+        "model": {
+          "type": "string",
+          "description": "Image model to use"
+        },
+        "aspectRatio": {
+          "type": "string",
+          "enum": ["16:9", "9:16", "1:1"],
+          "default": "16:9",
+          "description": "Aspect ratio of the frame"
+        },
+        "imageSize": {
+          "type": "string",
+          "default": "1K",
+          "description": "Output image size"
+        }
+      },
+      "required": ["prompt"]
+    }
+  }
+}

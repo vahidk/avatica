@@ -1,0 +1,37 @@
+{
+  "id": "scene.v1",
+  "name": "Scene",
+  "extension": ".scene",
+  "icon": "fa-solid fa-mountain-sun",
+  "thumbnail": "references.front",
+  "jsonSchema": {
+    "type": "object",
+    "properties": {
+      "name": { "type": "string" },
+      "setting": {
+        "type": "object",
+        "properties": {
+          "location": { "type": "string" },
+          "era": { "type": "string" },
+          "interior": { "type": "string" }
+        }
+      },
+      "environment": {
+        "type": "object",
+        "properties": {
+          "timeOfDay": { "type": "string" },
+          "weather": { "type": "string" },
+          "lighting": { "type": "string" },
+          "extra": { "type": "string" }
+        }
+      },
+      "mood": { "type": "string" },
+      "references": {
+        "type": "object",
+        "additionalProperties": { "type": "string" }
+      },
+      "tags": { "type": "array", "items": { "type": "string" } }
+    },
+    "required": ["name"]
+  }
+}

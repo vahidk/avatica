@@ -1,0 +1,26 @@
+Write an image generation prompt for a continuation shot — a new camera angle of a scene already in progress.
+
+The reference image (visible to the image model, not to you) shows this moment: {{sourceDescription}}
+
+{{#if addedSubjects}}
+Additional elements entering this frame (reference images for these are also provided to the image model):
+{{addedSubjects}}
+{{/if}}
+
+New camera setup: {{composition}}
+
+{{#if action}}
+What the subjects are doing in this continuation frame: {{action}}
+{{/if}}
+
+Write the prompt as a natural description of the new image. Refer to characters by role/name.
+
+IMPORTANT — you have NOT seen the reference image, so do NOT invent spatial details you cannot know:
+- Do NOT state who is on the left or right of the frame.
+- Do NOT state which way anyone is facing.
+- Do NOT describe wardrobe, hair, skin tone, or physical appearance.
+- Do NOT describe the setting's specific layout.
+
+Instead, write the prompt so it explicitly defers to the reference image for all of those. For example: "matching the exact character positions, facing directions, wardrobe, and setting shown in the reference image."
+
+Focus your prose on: the new camera angle, the action, expressions, emotional beat, and any added subjects. Keep it concrete and grounded.

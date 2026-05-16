@@ -1,0 +1,86 @@
+<app-view>
+  <app-row>
+    <app-file name="reference" label="$yourPhoto" accept="image/*"></app-file>
+  </app-row>
+  <app-mode name="gender" value="female">
+    <app-mode-option value="female" label="$female" icon="venus">
+      <app-image-select name="style" label="$hairstyle" required>
+        <option value="bob" label="$bob" image="female/bob.jpg"></option>
+        <option value="pixie" label="$pixieCut" image="female/pixie.jpg"></option>
+        <option value="long-layers" label="$longLayers" image="female/long-layers.jpg"></option>
+        <option value="braids" label="$braids" image="female/braids.jpg"></option>
+        <option value="updo" label="$updo" image="female/updo.jpg"></option>
+        <option value="curly" label="$curly" image="female/curly.jpg"></option>
+        <option value="beach-waves" label="$beachWaves" image="female/beach-waves.jpg"></option>
+        <option value="bangs" label="$bangs" image="female/bangs.jpg"></option>
+        <option value="ponytail" label="$ponytail" image="female/ponytail.jpg"></option>
+      </app-image-select>
+      <app-image-select name="color" label="$hairColor" required>
+        <option value="blonde" label="$blonde" image="female/blonde.jpg"></option>
+        <option value="brunette" label="$brunette" image="female/brunette.jpg"></option>
+        <option value="red" label="$red" image="female/red.jpg"></option>
+        <option value="black" label="$black" image="female/black.jpg"></option>
+        <option value="platinum" label="$platinum" image="female/platinum.jpg"></option>
+        <option value="balayage" label="$balayage" image="female/balayage.jpg"></option>
+        <option value="pastel-pink" label="$pastelPink" image="female/pastel-pink.jpg"></option>
+        <option value="auburn" label="$auburn" image="female/auburn.jpg"></option>
+        <option value="silver" label="$silver" image="female/silver.jpg"></option>
+      </app-image-select>
+      <app-image-select name="views" multiple label="$views" required>
+        <option value="front" label="$front" image="female/view-front.jpg"></option>
+        <option value="side-profile" label="$sideProfile" image="female/view-side.jpg"></option>
+        <option value="back" label="$back" image="female/view-back.jpg"></option>
+        <option value="three-quarter" label="$threequarter" image="female/view-three-quarter.jpg"></option>
+        <option value="close-up" label="$closeupDetail" image="female/view-closeup.jpg"></option>
+        <option value="updo-detail" label="$updoDetail" image="female/view-updo-detail.jpg"></option>
+        <option value="wind-blown" label="$windblown" image="female/view-wind.jpg"></option>
+        <option value="tousled" label="$tousled" image="female/view-tousled.jpg"></option>
+        <option value="half-up" label="$halfup" image="female/view-half-up.jpg"></option>
+      </app-image-select>
+    </app-mode-option>
+    <app-mode-option value="male" label="$male" icon="mars">
+      <app-image-select name="style" label="$hairstyle" required>
+        <option value="bob" label="$shortCrop" image="male/bob.jpg"></option>
+        <option value="pixie" label="$buzzCut" image="male/pixie.jpg"></option>
+        <option value="long-layers" label="$mediumLayers" image="male/long-layers.jpg"></option>
+        <option value="braids" label="$braids" image="male/braids.jpg"></option>
+        <option value="updo" label="$manBun" image="male/updo.jpg"></option>
+        <option value="curly" label="$curly" image="male/curly.jpg"></option>
+        <option value="beach-waves" label="$wavy" image="male/beach-waves.jpg"></option>
+        <option value="bangs" label="$fringe" image="male/bangs.jpg"></option>
+        <option value="ponytail" label="$ponytail" image="male/ponytail.jpg"></option>
+      </app-image-select>
+      <app-image-select name="color" label="$hairColor" required>
+        <option value="blonde" label="$blonde" image="male/blonde.jpg"></option>
+        <option value="brunette" label="$brunette" image="male/brunette.jpg"></option>
+        <option value="red" label="$red" image="male/red.jpg"></option>
+        <option value="black" label="$black" image="male/black.jpg"></option>
+        <option value="platinum" label="$platinum" image="male/platinum.jpg"></option>
+        <option value="balayage" label="$balayage" image="male/balayage.jpg"></option>
+        <option value="pastel-pink" label="$pastelPink" image="male/pastel-pink.jpg"></option>
+        <option value="auburn" label="$auburn" image="male/auburn.jpg"></option>
+        <option value="silver" label="$silver" image="male/silver.jpg"></option>
+      </app-image-select>
+      <app-image-select name="views" multiple label="$views" required>
+        <option value="front" label="$front" image="male/view-front.jpg"></option>
+        <option value="side-profile" label="$sideProfile" image="male/view-side.jpg"></option>
+        <option value="back" label="$back" image="male/view-back.jpg"></option>
+        <option value="three-quarter" label="$threequarter" image="male/view-three-quarter.jpg"></option>
+        <option value="close-up" label="$closeupDetail" image="male/view-closeup.jpg"></option>
+        <option value="updo-detail" label="$updoDetail" image="male/view-updo-detail.jpg"></option>
+        <option value="wind-blown" label="$windblown" image="male/view-wind.jpg"></option>
+        <option value="tousled" label="$tousled" image="male/view-tousled.jpg"></option>
+        <option value="half-up" label="$halfup" image="male/view-half-up.jpg"></option>
+      </app-image-select>
+    </app-mode-option>
+  </app-mode>
+  <app-row>
+    <app-select name="model" label="$model" options="$providers.image.generate"></app-select>
+    <app-select name="aspectRatio" value="3:4" label="$aspectRatio" options="$providers.image.generate[model].aspectRatio"></app-select>
+    <app-select name="imageSize" value="1K" label="$imageSize" options="$providers.image.generate[model].imageSize"></app-select>
+  </app-row>
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="Custom instructions (optional)"></app-input>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

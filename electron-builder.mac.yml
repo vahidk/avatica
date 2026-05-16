@@ -1,0 +1,18 @@
+extends: electron-builder.yml
+
+mac:
+  target:
+    - target: mas
+      arch:
+        - universal
+  identity: null
+  hardenedRuntime: true
+  entitlements: build/entitlements.mas.plist
+  entitlementsInherit: build/entitlements.mas.inherit.plist
+  notarize: false
+
+mas:
+  identity: "Reinfors Inc. (7JYC4B67B9)"
+  entitlements: build/entitlements.mas.plist
+  entitlementsInherit: build/entitlements.mas.inherit.plist
+  provisioningProfile: build/embedded.provisionprofile

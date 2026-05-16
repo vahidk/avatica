@@ -1,0 +1,22 @@
+<app-view>
+  <app-row>
+    <app-file name="shot" label="$shot" schema="shot.v1" required></app-file>
+  </app-row>
+  <app-row>
+    <app-select name="model" value="veo-3.1-lite" label="$model" options="$providers.video.image_to_video"></app-select>
+    <app-select name="resolution" value="720p" label="$resolution" options="$providers.video.image_to_video[model].resolution"></app-select>
+    <app-select name="aspectRatio" value="16:9" label="$aspectRatio" options="$providers.video.image_to_video[model].aspectRatio"></app-select>
+    <app-select name="chunkSize" value="8" label="$chunkSize">
+      <option value="4">4s</option>
+      <option value="6">6s</option>
+      <option value="8">8s</option>
+    </app-select>
+  </app-row>
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="The monologue text — spoken lines, or a full script with headers and cues..." required></app-input>
+  </app-row>
+  <app-row>
+    <app-spacer></app-spacer>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

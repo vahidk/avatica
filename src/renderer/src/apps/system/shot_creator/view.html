@@ -1,0 +1,144 @@
+<app-view>
+  <app-mode name="mode" value="create" label="$mode">
+    <app-mode-option value="create" label="$create" icon="plus">
+      <app-row>
+        <app-file name="scene" label="$scene" schema="scene.v1"></app-file>
+        <app-file name="characters" label="$characters" schema="character.v1" multiple max="5"></app-file>
+        <app-file name="objects" label="$objects" schema="object.v1" multiple max="5"></app-file>
+      </app-row>
+      <app-row>
+        <app-select name="genre" value="" label="$genre">
+          <option value="">Auto</option>
+          <option value="drama">Drama</option>
+          <option value="horror">Horror</option>
+          <option value="thriller">Thriller</option>
+          <option value="sci-fi">Sci-Fi</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="romance">Romance</option>
+          <option value="western">Western</option>
+          <option value="noir">Film Noir</option>
+          <option value="comedy">Comedy</option>
+          <option value="action">Action</option>
+          <option value="documentary">Documentary</option>
+          <option value="period">Period / Historical</option>
+          <option value="animation">Animation</option>
+          <option value="experimental">Experimental</option>
+        </app-select>
+        <app-select name="mood" value="" label="$mood">
+          <option value="">Auto</option>
+          <option value="tense">Tense</option>
+          <option value="serene">Serene</option>
+          <option value="melancholic">Melancholic</option>
+          <option value="euphoric">Euphoric</option>
+          <option value="ominous">Ominous</option>
+          <option value="chaotic">Chaotic</option>
+          <option value="intimate">Intimate</option>
+          <option value="epic">Epic</option>
+          <option value="dreamlike">Dreamlike</option>
+          <option value="mysterious">Mysterious</option>
+          <option value="nostalgic">Nostalgic</option>
+          <option value="playful">Playful</option>
+          <option value="gritty">Gritty</option>
+          <option value="ethereal">Ethereal</option>
+        </app-select>
+        <app-select name="colorPalette" value="" label="$colorPalette">
+          <option value="">Auto</option>
+          <option value="natural">Natural</option>
+          <option value="warm">Warm</option>
+          <option value="cool">Cool</option>
+          <option value="desaturated">Desaturated</option>
+          <option value="high-contrast">High Contrast</option>
+          <option value="neon">Neon / Saturated</option>
+          <option value="monochrome">Monochrome</option>
+          <option value="vintage">Vintage / Faded</option>
+          <option value="teal-orange">Teal & Orange</option>
+          <option value="pastel">Pastel</option>
+          <option value="bleach-bypass">Bleach Bypass</option>
+          <option value="cross-processed">Cross-Processed</option>
+        </app-select>
+        <app-select name="lighting" value="" label="$lighting">
+          <option value="">Auto</option>
+          <option value="natural">Natural</option>
+          <option value="golden-hour">Golden Hour</option>
+          <option value="blue-hour">Blue Hour</option>
+          <option value="harsh">Harsh / Midday</option>
+          <option value="soft">Soft / Overcast</option>
+          <option value="backlit">Backlit</option>
+          <option value="silhouette">Silhouette</option>
+          <option value="chiaroscuro">Chiaroscuro</option>
+          <option value="neon">Neon / Practical</option>
+          <option value="moonlit">Moonlit</option>
+          <option value="candlelit">Candlelit</option>
+          <option value="fluorescent">Fluorescent</option>
+          <option value="volumetric">Volumetric / God Rays</option>
+          <option value="low-key">Low-Key</option>
+          <option value="high-key">High-Key</option>
+        </app-select>
+      </app-row>
+    </app-mode-option>
+
+    <app-mode-option value="continue" label="$continue" icon="forward">
+      <app-row>
+        <app-file name="shot" label="$shot" schema="shot.v1" required></app-file>
+        <app-file name="characters" label="$characters" schema="character.v1" multiple max="5"></app-file>
+        <app-file name="objects" label="$objects" schema="object.v1" multiple max="5"></app-file>
+      </app-row>
+    </app-mode-option>
+  </app-mode>
+
+  <app-row>
+    <app-select name="framing" value="" label="$framing">
+      <option value="">Auto</option>
+      <option value="extreme-close-up">Extreme Close-Up</option>
+      <option value="close-up">Close-Up</option>
+      <option value="medium-close-up">Medium Close-Up</option>
+      <option value="medium">Medium Shot</option>
+      <option value="medium-wide">Medium Wide</option>
+      <option value="wide">Wide Shot</option>
+      <option value="establishing">Establishing Shot</option>
+    </app-select>
+    <app-select name="cameraAngle" value="" label="$cameraAngle">
+      <option value="">Auto</option>
+      <option value="eye-level">Eye Level</option>
+      <option value="low-angle">Low Angle</option>
+      <option value="high-angle">High Angle</option>
+      <option value="birds-eye">Bird's Eye</option>
+      <option value="dutch-angle">Dutch Angle</option>
+      <option value="over-the-shoulder">Over the Shoulder</option>
+    </app-select>
+    <app-select name="lens" value="" label="$lens">
+      <option value="">Auto</option>
+      <option value="16mm">16mm Ultra-Wide</option>
+      <option value="24mm">24mm Wide</option>
+      <option value="35mm">35mm Standard</option>
+      <option value="50mm">50mm Normal</option>
+      <option value="85mm">85mm Portrait</option>
+      <option value="100mm-macro">100mm Macro</option>
+      <option value="135mm">135mm Telephoto</option>
+      <option value="200mm">200mm+ Long Telephoto</option>
+      <option value="anamorphic">Anamorphic</option>
+      <option value="tilt-shift">Tilt-Shift</option>
+      <option value="fisheye">Fisheye</option>
+    </app-select>
+    <app-select name="depthOfField" value="" label="$depthOfField">
+      <option value="">Auto</option>
+      <option value="deep">Deep Focus</option>
+      <option value="moderate">Moderate</option>
+      <option value="shallow">Shallow</option>
+      <option value="very-shallow">Very Shallow</option>
+      <option value="rack-focus">Rack Focus</option>
+      <option value="split-diopter">Split Diopter</option>
+    </app-select>
+  </app-row>
+
+  <app-row>
+    <app-select name="model" label="$model" options="$providers.image.generate"></app-select>
+    <app-select name="aspectRatio" value="16:9" label="$aspectRatio" options="$providers.image.generate[model].aspectRatio"></app-select>
+    <app-select name="imageSize" value="1K" label="$imageSize" options="$providers.image.generate[model].imageSize"></app-select>
+  </app-row>
+
+  <app-row>
+    <app-input name="prompt" type="textarea" placeholder="Describe the action or moment in this shot..." required></app-input>
+    <app-submit></app-submit>
+  </app-row>
+</app-view>

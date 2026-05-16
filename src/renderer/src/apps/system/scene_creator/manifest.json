@@ -1,0 +1,39 @@
+{
+  "id": "scene_creator",
+  "name": "Scene Creator",
+  "menu": [
+    "Entity"
+  ],
+  "order": 80,
+  "icon": "mountain-sun",
+  "type": "system",
+  "function": {
+    "description": "Generate a scene or location with reference image, description, and attributes",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "Scene or location concept"
+        },
+        "style": {
+          "type": "string",
+          "default": "cinematic",
+          "description": "Art style"
+        },
+        "imageSize": {
+          "type": "string",
+          "default": "1K",
+          "description": "Output image size"
+        },
+        "model": {
+          "type": "string",
+          "description": "Image model to use"
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  }
+}
